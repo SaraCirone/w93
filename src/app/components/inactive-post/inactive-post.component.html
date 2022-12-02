@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngIf="posts.length > 0">
+      <div *ngFor="let post of posts; let i = index">
+        <app-post-card [post]="post">
+            <button type="button" class="btn btn-primary" id="attiva" (click)="onActivePost(post.id, i)">Attiva</button>
+        </app-post-card>
+      </div>
+  </div>
+</div>
+
+<div class="container text-center mb-5">
+  <button class="btn btn-primary"><a class="text-white" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></button>
+</div>
